@@ -4700,6 +4700,11 @@ react-is@^17.0.1:
   resolved "https://registry.npmjs.org/react-is/-/react-is-17.0.2.tgz"
   integrity sha512-w2GsyukL62IJnlaff/nRegPQR94C/XXamvMWmSHRJ4y7Ts/4ocGRmTHvOs8PSE6pB3dWOrD/nueuU5sduBsQ4w==
 
+react-native-drag-sort@^2.4.3:
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/react-native-drag-sort/-/react-native-drag-sort-2.4.3.tgz#730ba5dc641e66a8b38fbae5c4ce9272c3bed45d"
+  integrity sha512-9hpK2HHI0sd4t/LXQ2jnGzcq313e4lGxDG2zZ4YbMpo4xElYB0QGTiGLwqGToLXnfk12eL/NQ4YWIXMS1KWwXQ==
+
 react-native-safe-area-context@3.2.0:
   version "3.2.0"
   resolved "https://registry.npmjs.org/react-native-safe-area-context/-/react-native-safe-area-context-3.2.0.tgz"

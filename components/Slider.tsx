@@ -1,10 +1,11 @@
 import React from "react";
 import VerticalSlider from "rn-vertical-slider";
 import { StyleSheet, Text, View } from "react-native";
+import { SliderType } from "../App"; 
 
-export const Slider = () => {
+export const Slider = (props: SliderType) => {
   const [sliderChanging, setSliderChanging] = React.useState(false);
-  const [sliderValue, setSliderValue] = React.useState(0);
+  const [sliderValue, setSliderValue] = React.useState(props.appVolume);
 
   return (
     <View style={styles.slider}>
@@ -17,7 +18,10 @@ export const Slider = () => {
           //   alignSelf: "flex-start",
         }}
       >
-        <Text>AppIcon</Text>
+        {
+          props.appName &&
+          <Text>{props.appName}</Text>
+        }
       </View>
       <View
         style={{
