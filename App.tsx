@@ -1,12 +1,17 @@
-import { StatusBar } from "expo-status-bar";
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+// import { StatusBar } from "expo-status-bar";
+import { StyleSheet, Text, SafeAreaView, View } from "react-native";
+import { Slider } from "./components/Slider";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>Test lol</Text>
-      <StatusBar style="auto" />
+      <Slider />
+      <Slider />
+      <Slider />
+      <Slider />
+      <Slider />
+      <Slider />
     </View>
   );
 }
@@ -14,6 +19,11 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingLeft: 60,
+    paddingRight: 60,
+    paddingTop: 30,
+    paddingBottom: 30,
+    flexDirection: "row",
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
