@@ -12,7 +12,9 @@ export const Slider = (props: SliderType) => {
     <View>
       <View style={styles.sliderName}>
         {props.appName && (
-          <Text style={{ color: "#fff" }}>{props.appName}</Text>
+          <Text style={{ color: "#fff", fontFamily: "Karla_400Regular" }}>
+            {props.appName}
+          </Text>
         )}
       </View>
       <View style={styles.handle}>
@@ -29,8 +31,8 @@ export const Slider = (props: SliderType) => {
             setSliderValue(value);
           }}
           onComplete={(value: number) => {}}
-          width={30}
-          height={200}
+          width={26}
+          height={190}
           step={1}
           minimumTrackTintColor={colors.vividGreen}
           maximumTrackTintColor={colors.darkGrey}
