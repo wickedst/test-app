@@ -1,56 +1,32 @@
 import React from "react";
 // import { StatusBar } from "expo-status-bar";
-import { Dimensions, StyleSheet, Text, SafeAreaView, View, Image } from "react-native";
+import { Dimensions, StyleSheet, SafeAreaView } from "react-native";
 import { Slider } from "./components/Slider";
 import { DragSortableView } from "react-native-drag-sort";
+import { SliderType } from "./types";
+import { sliderData } from "./data";
+import { View } from "react-native";
+import { colors } from "./styles/colors";
 
 const deviceWidth = Dimensions.get("window").width;
+const deviceHeight = Dimensions.get("window").height;
 const childrenWidth = deviceWidth / 12;
-const childrenHeight = deviceWidth / 8;
-const itemWidth = 72;
-const itemHeight = 36;
-const sortWidth = deviceWidth;
-
-export interface SliderType {
-  appName: string,
-  appVolume: number,
-  appIcon: Image
-}
-
-type Sliders = SliderType[];
-
-const sliderData: Sliders = [
-  {
-    appName: "spotify",
-    appVolume: 60,
-    appIcon: require("./assets/splash.png"),
-  },
-  {
-    appName: "skype",
-    appVolume: 20,
-    appIcon: require("./assets/splash.png"),
-  },
-  {
-    appName: "zoom",
-    appVolume: 90,
-    appIcon: require("./assets/splash.png"),
-  },
-  {
-    appName: "master",
-    appVolume: 90,
-    appIcon: require("./assets/splash.png"),
-  },
-  {
-    appName: "system",
-    appVolume: 20,
-    appIcon: require("./assets/splash.png"),
-  },
-];
-
-const fixedItems = [null];
 
 const renderItem = (item: SliderType, index: any) => {
-  return <Slider appName={item.appName} appVolume={item.appVolume} appIcon={item.appIcon}/>;
+  return (
+    <View
+      style={{
+        height: deviceHeight - 20,
+        justifyContent: "center",
+      }}
+    >
+      <Slider
+        appName={item.appName}
+        appVolume={item.appVolume}
+        appIcon={item.appIcon}
+      />
+    </View>
+  );
 };
 
 export default function App() {
@@ -58,9 +34,9 @@ export default function App() {
     <SafeAreaView style={styles.container}>
       <DragSortableView
         dataSource={sliderData}
-        parentWidth={sortWidth / 1.5}
+        parentWidth={deviceWidth - 50}
         childrenWidth={childrenWidth}
-        childrenHeight={childrenHeight * 2}
+        childrenHeight={deviceHeight - 20}
         // fixedItems={fixedItems}
         marginChildrenBottom={10}
         marginChildrenRight={10}
@@ -81,12 +57,9 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingLeft: 60,
-    paddingRight: 60,
-    paddingTop: 30,
-    paddingBottom: 30,
-    flexDirection: "row",
-    backgroundColor: "#fff",
+    paddingLeft: 50,
+    // flexDirection: "row",
+    backgroundColor: colors.black,
     alignItems: "center",
     justifyContent: "center",
   },
